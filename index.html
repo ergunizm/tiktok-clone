@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/sass/body.css" />
     <title>Tiktok</title>
-    <script defer src="script.js"></script>
+    <script defer src="src/js/script.js"></script>
   </head>
   <body>
     <div class="f-container">
@@ -16,46 +16,36 @@
     </div>
     <div class="s-container">
       <nav class="navbar">
-        <a class="cont-left" href="#">
-          <svg height="42" width="118" alt="Tiktok Logo">
-            <use xlink:href="tiktok.svg"></use>
-          </svg>
+        <a class="cont-left" href="index.html">
+          <img src="src/img/logo.png" alt="Logo" />
         </a>
         <div class="cont-center">
           <form class="f-search">
-            <input class="input-fs" type="text" placeholder="Search videos" />
-            <button class="btn-fs">🤍</button>
+            <input class="input-fs" type="text" placeholder="Search images" />
+            <a href="search.html" class="btn-fs">🤍</a>
           </form>
         </div>
 
-        <div class="cont-right">Description</div>
+        <div class="cont-right">
+          <button class="btn-sl btn-none">Likes</button>
+          <div class="likes">
+            <ul class="likes__list">
+              <div class="likes__message">
+                <p>To save an image, click 👍🏻at the bottom of the image</p>
+              </div>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
 
     <div class="t-container">
       <div class="left-section t-aside">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-          consequatur nam ad iste distinctio a corrupti saepe tenetur, explicabo
-          ab, neque cumque nesciunt deserunt, facilis aliquid magnam placeat
-          praesentium assumenda!
-        </p>
+        <p>ADVERTISEMENTS</p>
       </div>
-      <div class="center-section">
-        <!-- <img
-          src="https://via.placeholder.com/600/6dd9cb"
-          alt="dsfdsf"
-          class="setmargin"
-          style="height: calc(100vh)"
-        /> -->
-      </div>
+      <div class="center-section"></div>
       <div class="right-section t-aside">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          natus obcaecati mollitia animi eveniet, non similique, quas saepe enim
-          totam tenetur molestias nihil. Repellendus, autem doloribus! Repellat
-          nihil quia quam.
-        </p>
+        <p>ADVERTISEMENTS</p>
       </div>
     </div>
 

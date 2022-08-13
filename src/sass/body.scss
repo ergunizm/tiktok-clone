@@ -7,23 +7,27 @@ $aside-length: 250px;
 body {
   width: 100%;
   height: 800px;
+  background-color: $color-primary;
 }
 
 * {
-  //background-color: $color-primary;
   color: $color-font-primary;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 .f-container {
-  background-color: aqua;
+  background-color: $color-primary;
   flex-basis: auto;
   .hf-info {
     p {
       margin-left: 10%;
     }
   }
+}
+
+.btn-none {
+  border-style: none;
 }
 
 .sticky {
@@ -33,10 +37,12 @@ body {
 }
 
 .navbar {
+  height: 40px;
   display: flex;
   justify-content: space-around;
   flex-basis: auto;
   align-items: center;
+  border-radius: 0 0 3px 3px;
   background-color: $color-secondary;
 }
 .cont-center {
@@ -49,25 +55,37 @@ body {
   .f-search {
     .input-fs {
       border-style: none;
-      color: black;
+      color: $color-primary;
     }
     .input-fs:focus {
       outline: none;
       background-color: rgb(197, 184, 184);
     }
-    .btn-fs {
-      border-style: none;
-    }
+  }
+}
+.cont-right .btn-sl {
+  background-color: $color-secondary;
+  &:hover {
+    cursor: pointer;
+    transition: color 2s ease;
+    color: $color-primary;
   }
 }
 
 .t-container {
-  margin-top: 8%;
+  margin-top: 4%;
   display: flex;
   justify-content: space-between;
 
+  .left-section p {
+    float: left;
+  }
+  .right-section p {
+    float: right;
+  }
+
   .t-aside {
-    background-color: $color-primary;
+    background-color: $color-font-primary;
     width: 30%;
     @media only screen and (min-width: $bp-large) {
       width: $aside-length;
@@ -78,8 +96,18 @@ body {
 .center-section {
   text-align: center;
   flex-basis: 40%;
-  @media only screen and (min-width: $bp-large) {
-    flex-basis: calc(100% - $aside-length * 2);
+  margin: 0 5%;
+
+  // @media only screen and (min-width: $bp-large) {
+  //   flex-basis: calc(100% - $aside-length * 2);
+  // }
+  p {
+    float: left;
+  }
+  .btn-ts {
+    cursor: pointer;
+    float: left;
+    font-size: 150%;
   }
 }
 
@@ -87,11 +115,87 @@ body {
   margin-top: 7%;
 }
 
-.image-load {
+.hideMore {
+  overflow: hidden;
+  line-height: 1em;
+  height: 1em;
   width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 9999;
-  background: url("https://www.creditmutuel.fr/cmne/fr/banques/webservices/nswr/images/loading.gif")
-    no-repeat center center rgba(0, 0, 0, 0.25);
+}
+
+.showMore {
+  line-height: 1em;
+  width: 100%;
+  height: auto;
+}
+
+.span-sh {
+  cursor: pointer;
+  width: 100%;
+  font-size: 50%;
+}
+
+.btn-sl {
+  font-size: 120%;
+}
+
+.likes {
+  padding: 1rem 0;
+  position: absolute;
+  right: 0.1%;
+  z-index: 10;
+  width: 30%;
+  background-color: $color-secondary;
+  margin-top: 13px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s 0.2s;
+  border-radius: 3px;
+
+  &__list {
+    list-style: none;
+  }
+
+  &:hover,
+  .btn-sl:hover + & {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.liked {
+  text-decoration: none;
+
+  &:hover {
+    .preview__title {
+      transition: all 0.5s ease;
+      color: $color-primary;
+      padding: 10px;
+    }
+  }
+
+  .preview {
+    display: flex;
+    padding: 2%;
+    &__fig {
+      flex: 0 0 20%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__title {
+      text-decoration: none;
+      display: grid;
+      width: 100%;
+      align-items: center;
+      margin-left: 5%;
+
+      // This is how text is truncated!
+      text-overflow: ellipsis;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
 }
